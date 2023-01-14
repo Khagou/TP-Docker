@@ -1,0 +1,21 @@
+# dl de python
+FROM python:3
+
+WORKDIR /usr/src/app
+
+# Installation des modules mariadb
+
+RUN wget https://dlm.mariadb.com/2678579/Connectors/c/connector-c-3.3.3/mariadb-connector-c-3.3.3-debian-buster-amd64.tar.gz -O - | tar -zxf - --strip-components=1 -C /usr
+
+ENV LD_PRELOAD=/usr/lib/mariadb/libmariadb.so
+ENV LD_LIBRARY_PATH=/usr/lib/mariadb
+
+RUN pip3 install --no-cache-dir mariadb
+
+# copie des fichiers main et config
+COPY . .
+
+# Remplacement du user et password dans le fichier config
+RUN sed -i 's/admin/toto/g' config.py
+RUN sed -i "s/: 'password'/: 'test123'/g" config.py
+RUN sed -i "s/localhost/mariadb-app/g" config.py
