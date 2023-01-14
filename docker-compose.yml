@@ -1,0 +1,27 @@
+version: "3.1"
+
+services:
+  mariadb-app:
+    image: mariadb-app
+    networks:
+      - mariadbnet
+    volumes:
+      - /database:/database
+  
+  python-app:
+    image: python-app
+    stdin_open: true # docker run -i
+    tty: true        # docker run 
+    networks:
+      - mariadbnet
+    volumes:
+      - /database:/database
+    depends_on:
+      - mariadb-app
+    command: sh -c "python3 main.py"
+
+volumes:
+  database:
+
+networks:
+  mariadbnet:

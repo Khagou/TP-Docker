@@ -1,0 +1,15 @@
+FROM mariadb
+
+# copie du fichier create_structure.sql de la machine vers le repertoire de l'image
+COPY . .
+
+# Exposition du port:
+EXPOSE 3306
+
+COPY create_structure.sql /docker-entrypoint-initdb.d/
+
+# Declariation des variables d'environnement
+ENV MYSQL_ROOT_PASSWORD test123
+ENV MYSQL_DATABASE parc_informatique
+ENV MYSQL_USER toto
+ENV MYSQL_PASSWORD test123
