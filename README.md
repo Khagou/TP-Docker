@@ -1,7 +1,4 @@
 # TP-Docker
-TP-docker deploiement d'une application python avec une base de donnee mariadb sur 2 containers
-
-# TP-Docker
 Application python avec une base de donnée MariaDB sur des containers docker
 
 Les images nécessaires ce trouvent dans le repo git et sur le hub docker sur les liens ci dessous:
