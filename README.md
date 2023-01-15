@@ -1,5 +1,5 @@
 # TP-Docker
-Application python avec une base de donnée MariaDB sur des containers docker
+Application python avec une base de donnée MariaDB sur des containers docker hébergé sur un système debian.
 
 Les images nécessaires ce trouvent dans le repo git et sur le hub docker sur les liens ci dessous:
 
