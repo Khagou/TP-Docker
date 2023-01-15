@@ -2,14 +2,14 @@ version: "3.1"
 
 services:
   mariadb-app:
-    image: mariadb-app
+    image: khagu/tp-docker-mariadb:1.0.0
     networks:
       - mariadbnet
     volumes:
       - database:/var/lib/mysql
   
   python-app:
-    image: python-app
+    image: khagu/tp-docker-python:1.0.0
     stdin_open: true # docker run -i
     tty: true        # docker run -t
     networks:
