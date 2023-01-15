@@ -6,7 +6,7 @@ services:
     networks:
       - mariadbnet
     volumes:
-      - /database:/database
+      - database:/var/lib/mysql
   
   python-app:
     image: python-app
