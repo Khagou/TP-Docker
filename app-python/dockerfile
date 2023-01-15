@@ -14,8 +14,3 @@ RUN pip3 install --no-cache-dir mariadb
 
 # copie des fichiers main et config
 COPY . .
-
-# Remplacement du user et password dans le fichier config
-RUN sed -i 's/admin/toto/g' config.py
-RUN sed -i "s/: 'password'/: 'test123'/g" config.py
-RUN sed -i "s/localhost/mariadb-app/g" config.py

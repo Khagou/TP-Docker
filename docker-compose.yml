@@ -11,17 +11,21 @@ services:
   python-app:
     image: python-app
     stdin_open: true # docker run -i
-    tty: true        # docker run 
+    tty: true        # docker run -t
     networks:
       - mariadbnet
     volumes:
-      - /database:/database
-    depends_on:
-      - mariadb-app
-    command: sh -c "python3 main.py"
+      - /appli:/appli
+    environment:
+      DB_USER: toto
+      DB_PASSWORD: test123
+      DB_HOST: mariadb-app
+      DB_PORT: 3306
+      DB_NAME: parc_informatique
 
 volumes:
   database:
+  appli:
 
 networks:
   mariadbnet:

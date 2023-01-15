@@ -7,9 +7,11 @@ COPY . .
 EXPOSE 3306
 
 COPY create_structure.sql /docker-entrypoint-initdb.d/
+COPY data.sql /docker-entrypoint-initdb.d/
 
 # Declariation des variables d'environnement
 ENV MYSQL_ROOT_PASSWORD test123
 ENV MYSQL_DATABASE parc_informatique
 ENV MYSQL_USER toto
 ENV MYSQL_PASSWORD test123
+COPY privileges.sql /docker-entrypoint-initdb.d/
