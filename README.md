@@ -4,7 +4,7 @@ TP-docker deploiement d'une application python avec une base de donnee mariadb s
 # TP-Docker
 Application python avec une base de donnée MariaDB sur des containers docker
 
-Les images nécessaires ce trouvent dans le repo git et sur les liens ci dessous:
+Les images nécessaires ce trouvent dans le repo git et sur le hub docker sur les liens ci dessous:
 
 Python: https://hub.docker.com/repository/docker/khagu/tp-docker-python/general
 
@@ -12,7 +12,7 @@ MariaDB: https://hub.docker.com/repository/docker/khagu/tp-docker-mariadb/genera
 
 Installation:
 
-Si vous avez téléchargé les images sur le repo commencez par réaliser les commandes suivantes:
+Si vous avez téléchargé les images sur le hub docker commencez par réaliser les commandes suivantes afin des les rename:
 - docker tag khagu/tp-docker-python:1.0.0 python-app:latest
 - docker tag khagu/tp-docker-mariadb:1.0.0 mariadb-app:latest
 - docker rmi khagu/tp-docker-python:1.0.0 khagu/tp-docker-mariadb:1.0.0
